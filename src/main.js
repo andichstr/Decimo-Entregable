@@ -25,7 +25,10 @@ const io = new Socket(httpServer)
 // configuro el socket
 
 io.on('connection', async socket => {
-    
+    socket.emit('producto');
+    socket.on('nuevoProducto');
+    socket.emit('mensaje');
+    socket.on('nuevoMensaje');
 });
 
 //--------------------------------------------
